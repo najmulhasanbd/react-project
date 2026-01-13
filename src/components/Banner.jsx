@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import banner from '../assets/img/banner/banner-img-1.png';
 import bannerShape1 from '../assets/img/shape/banner-shape-1.svg';
 import bannerShape2 from '../assets/img/banner/banner-shape-2.svg';
 
 const Banner = () => {
+    const [videoActive, setVideoActive] = useState(false);
     return (
         <section className="ep-banner-section position-relative overflow-hidden custom-wrapper-hover">
             <div className="banner-shape position-absolute top-50 translate-middle-y z-0">
@@ -33,12 +34,13 @@ const Banner = () => {
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="https://www.youtube.com/watch?v=PkkV1vLHUvQ"
-                                    className="vidplay play-now-btn d-inline-flex align-items-center">
+                                <button type='button' onClick={() => setVideoActive(true)} href="https://www.youtube.com/watch?v=PkkV1vLHUvQ"
+                                    className="vidplay border-0 bg-transparent play-now-btn d-inline-flex align-items-center">
                                     <span className="icon d-flex align-items-center justify-content-center rounded-pill"><i
                                         className="fas fa-play"></i></span>
                                     <span className="text">Play Now</span>
-                                </a>
+                                </button>
+
                             </div>
                         </div>
                     </div>
@@ -50,6 +52,28 @@ const Banner = () => {
                 </div>
             </div>
             <span className="custom-shadown position-absolute rounded-pill"></span>
+
+            <div
+                className={(videoActive ? " video-zoom-in" : " ") + " video-backdrop"}
+                onClick={() => setVideoActive(false)}>
+                <div className="video-inner">
+                    <div
+                        className="video-container"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {videoActive &&
+                            <iframe className='video' src="https://www.youtube.com/embed/E3M63jxnS-k" title="খামেনির হুং/কা/রের শ/ক্তি এখান থেকেই আসে | Iran defence | Ekattor TV" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        }
+                        <button
+                            aria-label="close video popup"
+                            className="close-video-popup"
+                            onClick={() => setVideoActive(false)}
+                        >
+                            <i className="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
     )
 }
