@@ -1,88 +1,137 @@
-import React from 'react'
-import SectionTitle from './SectionTitle'
-import { teams } from '../data/team'
+import React, { useEffect, useRef, useState } from 'react';
+import SectionTitle from './SectionTitle';
+import { gsap } from "gsap";
+import { teams } from '../data/team';
 
 const Team = () => {
+    const [activeTeam, setActiveTeam] = useState(
+        teams.find((team) => team.isActive)?.name || teams[0].name
+    );
+
+    const teamItemsRef = useRef([]);
+    const hoverImagesRef = useRef([]);
+
+    useEffect(() => {
+        const handleMouseMove = (event, index) => {
+            const item = teamItemsRef.current[index];
+            const img = hoverImagesRef.current[index];
+            if (!item || !img) return;
+
+            const rect = item.getBoundingClientRect();
+            
+            // মাউসের পজিশন অনুযায়ী রিলেটিভ মুভমেন্ট (ডান পাশ থেকে ক্যালকুলেশন)
+            const xPos = event.clientX - rect.left - (rect.width * 0.8); // ডান দিকে ফোকাস রাখা হয়েছে
+            const yPos = event.clientY - rect.top - rect.height / 2;
+
+            gsap.to(img, {
+                x: xPos * 0.2, 
+                y: yPos * 0.2,
+                duration: 0.5,
+                ease: "power2.out",
+                overwrite: "auto"
+            });
+        };
+
+        const handleMouseLeave = (index) => {
+            const img = hoverImagesRef.current[index];
+            if (img) {
+                gsap.to(img, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
+            }
+        };
+
+        if (window.innerWidth > 767) {
+            teams.forEach((team) => {
+                const item = teamItemsRef.current[team.id];
+                if (item) {
+                    const moveFn = (e) => handleMouseMove(e, team.id);
+                    const leaveFn = () => handleMouseLeave(team.id);
+
+                    item.addEventListener("mousemove", moveFn);
+                    item.addEventListener("mouseleave", leaveFn);
+
+                    return () => {
+                        item.removeEventListener("mousemove", moveFn);
+                        item.removeEventListener("mouseleave", leaveFn);
+                    };
+                }
+            });
+        }
+    }, []);
+
     return (
-        <section className="ep-team-section py-120">
+        <section className="ep-team-section py-120 overflow-hidden">
             <div className="container">
-                <div className="row">
+                <div className="row mb-5">
                     <div className="col-lg-7 mx-auto">
                         <SectionTitle title="Our Creative Members" subtitle="Technology that Moves You Forward" />
                     </div>
                 </div>
 
-                {
-                    teams.map((team) => {
-                        return (
-                            <div className="team-item rounded-20 position-relative">
-                                <div className="row g-4">
-                                    <div className="col-lg-4 col-md-6 align-self-center">
-                                        <div className="team-name-info">
-                                            <h4 className="name">{team.name}</h4>
-                                            <p>{team.designation}</p>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-md-5 align-self-center">
-                                        <div className="social-icon-box">
-                                            <ul className="list-unstyled">
-                                                <li>
-                                                    <a href={team.socialLinks.facebook} className="d-inline-flex justify-content-center align-items-center">
-                                                        <i className="fab fa-facebook-f"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href={team.socialLinks.pinterest} className="d-inline-flex justify-content-center align-items-center">
-                                                        <i className="fab fa-pinterest-p"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href={team.socialLinks.linkedin} className="d-inline-flex justify-content-center align-items-center">
-                                                        <i className="fab fa-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href={team.socialLinks.instagram} className="d-inline-flex justify-content-center align-items-center">
-                                                        <i className="fab fa-instagram"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-md-1 align-self-center">
-                                        <div className="hover-image position-absolute overflow-hidden rounded-20">
-                                            <div className="team-image">
-                                                <img src={team.image} alt="team-img" className="img-fluid w-100" />
-                                            </div>
-                                        </div>
+                <div className="team-wrapper">
+                    {teams.map((team) => (
+                        <div 
+                            key={team.id} 
+                            className={`team-item border-bottom py-4 position-relative ${activeTeam === team.name ? "active-team" : ""}`}
+                            ref={(el) => (teamItemsRef.current[team.id] = el)}
+                            onMouseEnter={() => setActiveTeam(team.name)}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <div className="row align-items-center">
+                                <div className="col-lg-5 col-md-6">
+                                    <div className="team-name-info">
+                                        <h4 className="name mb-1 font-bold text-2xl">{team.name}</h4>
+                                        <p className="designation mb-0 text-muted">{team.designation}</p>
                                     </div>
                                 </div>
+                                <div className="col-lg-4 col-md-4">
+                                    <div className="social-icon-box">
+                                        <ul className="list-unstyled d-flex gap-3 mb-0">
+                                            {Object.entries(team.socialLinks).map(([platform, link]) => (
+                                                <li key={platform}>
+                                                    <a href={link} className="text-dark text-center"><i className={`fab fa-${platform}`}></i></a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                {/* Image Container - Fixed to Right Side */}
+                                <div 
+                                    ref={(el) => (hoverImagesRef.current[team.id] = el)} 
+                                    className={`hover-image position-absolute ${activeTeam === team.name ? "opacity-100 visible" : "opacity-0 invisible"}`}
+                                    style={{ 
+                                        right: '10%', // ডান পাশ থেকে দূরত্ব
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        width: '200px',
+                                        height: '240px',
+                                        zIndex: 5,
+                                        pointerEvents: 'none',
+                                        transition: 'opacity 0.4s ease, visibility 0.4s ease'
+                                    }}
+                                >
+                                    <img 
+                                        src={team.image} 
+                                        alt={team.name} 
+                                        className="w-100 h-100 object-cover rounded-20 shadow-lg" 
+                                    />
+                                </div>
                             </div>
-                        )
-                    })
-                }
+                        </div>
+                    ))}
+                </div>
 
-
-                <div className="all-members text-center">
-                    <a href="contact.html" className="theme-btn theme-btn-border position-relative d-inline-flex align-items-center">
-                        Contact Us
-                        <span className="arrow">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_4443_62)">
-                                    <path
-                                        d="M13.4317 12.5381C13.4967 12.4215 13.535 12.2898 13.5367 12.1506L13.5733 7.95396C13.5758 7.60896 13.2992 7.32646 12.9483 7.32312C12.6058 7.32312 12.3258 7.59896 12.3233 7.94229L12.2975 10.8665L7.48917 6.05813C7.245 5.81396 6.84917 5.81396 6.605 6.05813C6.36083 6.30229 6.36083 6.69812 6.605 6.94229L11.4158 11.7531L8.59083 11.7831C8.245 11.7873 7.96833 12.0698 7.9725 12.4148C7.97583 12.7581 8.255 13.0331 8.60417 13.0331C8.60417 13.0331 12.6783 12.989 12.685 12.989C12.9967 12.9856 13.2842 12.8023 13.4325 12.539L13.4317 12.5381Z"
-                                        fill="white" />
-                                    <path
-                                        d="M9.99984 19.2219C9.29484 19.2219 8.59818 19.2094 7.91151 19.1853C4.06734 19.0503 0.949844 15.9328 0.81401 12.0869C0.789844 11.3994 0.777344 10.7036 0.777344 9.99859C0.777344 9.29359 0.789844 8.59776 0.81401 7.91026C0.949844 4.06609 4.06734 0.948594 7.91151 0.813594C9.28651 0.76526 10.7148 0.76526 12.0882 0.813594C15.9323 0.948594 19.0498 4.06609 19.1857 7.91193C19.2098 8.59859 19.2223 9.29526 19.2223 10.0003C19.2223 10.7053 19.2098 11.4011 19.1857 12.0886C19.0498 15.9336 15.9323 19.0511 12.0882 19.1869C11.4015 19.2111 10.7048 19.2236 9.99984 19.2236V19.2219ZM9.99984 2.02609C9.31068 2.02609 8.62818 2.03859 7.95568 2.06276C4.76401 2.17443 2.17568 4.76276 2.06318 7.95443C2.03984 8.62776 2.02734 9.30859 2.02734 9.99859C2.02734 10.6886 2.03984 11.3703 2.06318 12.0428C2.17568 15.2344 4.76401 17.8236 7.95568 17.9344C9.30151 17.9836 10.699 17.9836 12.044 17.9344C15.2365 17.8228 17.8248 15.2344 17.9365 12.0428C17.9598 11.3694 17.9723 10.6886 17.9723 9.99859C17.9723 9.30859 17.9598 8.62693 17.9365 7.95443C17.824 4.76276 15.2357 2.17359 12.044 2.06276C11.3707 2.03859 10.689 2.02609 9.99984 2.02609Z"
-                                        fill="white" />
-                                </g>
-                            </svg>
-                        </span>
-                    </a>
+                <div className="text-center mt-5">
+                    <button className="btn btn-outline-dark rounded-pill px-4 py-2">Contact Us</button>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Team
+export default Team;
