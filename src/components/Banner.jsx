@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import banner from '../assets/img/banner/banner-img-1.png';
 import bannerShape1 from '../assets/img/shape/banner-shape-1.svg';
 import bannerShape2 from '../assets/img/banner/banner-shape-2.svg';
+import { Link } from 'react-router';
 
 const Banner = () => {
     const [videoActive, setVideoActive] = useState(false);
@@ -19,7 +20,7 @@ const Banner = () => {
                             <h1 className="banner-title heading-style1 split-text right">Technology That Powers the Future</h1>
                             <p>lorem ipsum dolor sit amet consectetur. Facilisi cursus vulputate vestibulum etiam rhoncus </p>
                             <div className="banner-buttons">
-                                <a href="about.html" className="theme-btn position-relative d-inline-flex align-items-center">
+                                <Link to="about"  className="theme-btn position-relative d-inline-flex align-items-center">
                                     Read More
                                     <span className="arrow">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +34,7 @@ const Banner = () => {
                                             </g>
                                         </svg>
                                     </span>
-                                </a>
+                                </Link>
                                 <button type='button' onClick={() => setVideoActive(true)} href="https://www.youtube.com/watch?v=PkkV1vLHUvQ"
                                     className="vidplay border-0 bg-transparent play-now-btn d-inline-flex align-items-center">
                                     <span className="icon d-flex align-items-center justify-content-center rounded-pill"><i

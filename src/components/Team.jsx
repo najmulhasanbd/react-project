@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import SectionTitle from './SectionTitle';
 import { gsap } from "gsap";
 import { teams } from '../data/team';
+import { Link } from 'react-router';
 
 const Team = () => {
     const [activeTeam, setActiveTeam] = useState(
@@ -127,7 +128,7 @@ const Team = () => {
                 </div>
 
                 <div className="text-center mt-5">
-                    <button className="btn btn-outline-dark rounded-pill px-4 py-2">Contact Us</button>
+                    <Link to="contact" className="btn btn-outline-dark rounded-pill px-4 py-2">Contact Us</Link>
                 </div>
             </div>
         </section>

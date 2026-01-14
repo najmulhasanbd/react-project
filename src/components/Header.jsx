@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../assets/img/logo/logo.svg';
 import "../assets/fontawsome/css/fontawesome.css"
 import Menu from './Menu';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 const Header = () => {
     return (
@@ -38,7 +38,7 @@ const Header = () => {
                     <div className="mobile-topbar">
                         <div className="d-flex justify-content-between align-items-center">
                             <div className="logo">
-                                <a href="index.html"> <img src={logo} alt="logo" /></a>
+                                <Link to="/"> <img src={logo} alt="logo" /></Link>
                             </div>
                             <div className="bars">
                                 <i className="fas fa-bars"></i>
@@ -49,63 +49,63 @@ const Header = () => {
                 <div className="mobile-menu-overlay"></div>
                 <div className="mobile-menu-main">
                     <div className="logo">
-                        <a href="index.html"><img src={logo} alt="logo" /></a>
+                        <Link to="/"><img src={logo} alt="logo" /></Link>
                     </div>
                     <div className="close-mobile-menu"><i className="fas fa-times"></i></div>
                     <div className="menu-body">
                         <div className="menu-list">
                             <ul className="list-unstyled">
                                 <li className="sub-mobile-menu">
-                                    <a href="#">Home <i className="fas fa-chevron-down float-end"></i></a>
+                                    <Link href="#">Home <i className="fas fa-chevron-down float-end"></i></Link>
                                     <ul className="list-unstyled">
-                                        <li><a href="index.html">Home One</a></li>
-                                        <li><a href="home-two.html">Home Two</a></li>
+                                        <li><Link to="/">Home One</Link></li>
+                                        <li><Link to="home-two">Home Two</Link></li>
                                     </ul>
                                 </li>
                                 <li className="sub-mobile-menu">
-                                    <a href="about.html">About Us</a>
+                                    <Link to="about">About Us</Link>
                                 </li>
                                 <li className="sub-mobile-menu">
-                                    <a href="#">Services <i className="fas fa-chevron-down float-end"></i></a>
+                                    <Link href="#">Services <i className="fas fa-chevron-down float-end"></i></Link>
                                     <ul className="list-unstyled">
                                         <li>
-                                            <a href="services.html">Service Single</a>
+                                            <Link to="service">Service Single</Link>
                                         </li>
                                         <li>
-                                            <a href="service-details.html">Service Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="sub-mobile-menu">
-                                    <a href="#">Projects <i className="fas fa-chevron-down float-end"></i></a>
-                                    <ul className="list-unstyled">
-                                        <li>
-                                            <a href="projects.html">Project Single</a>
-                                        </li>
-                                        <li>
-                                            <a href="project-details.html">Project Details</a>
+                                            <Link to="service-details">Service Details</Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="sub-mobile-menu">
-                                    <a href="#">Blog <i className="fas fa-chevron-down float-end"></i></a>
+                                    <Link href="#">Projects <i className="fas fa-chevron-down float-end"></i></Link>
                                     <ul className="list-unstyled">
                                         <li>
-                                            <a href="blog.html">Blog Single</a>
+                                            <Link to="projects">Project Single</Link>
                                         </li>
                                         <li>
-                                            <a href="blog-details.html">Blog Details</a>
+                                            <Link to="project-details">Project Details</Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="sub-mobile-menu">
-                                    <a href="contact.html">Contact</a>
+                                    <Link href="#">Blog <i className="fas fa-chevron-down float-end"></i></Link>
+                                    <ul className="list-unstyled">
+                                        <li>
+                                            <Link to="blog">Blog Single</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="blog-details">Blog Details</Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className="sub-mobile-menu">
+                                    <Link to="contact">Contact</Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className="call-us p-4">
-                        <a href="tel:+1234567890" className="call-us-btn d-flex align-items-center gap-3">
+                        <Link href="tel:+1234567890" className="call-us-btn d-flex align-items-center gap-3">
                             <span className="icon d-flex justify-content-center
              align-items-center">
                                 <i className="fa-solid fa-phone"></i>
@@ -114,7 +114,7 @@ const Header = () => {
                                 <span className="title">Need help?</span>
                                 <h5 className="number">+123 456 7890</h5>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { services } from '../data/service'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
+import { Link } from 'react-router';
 
 
 const Services = () => {
@@ -45,7 +46,7 @@ const Services = () => {
                         {services.map((service) => (
                             <SwiperSlide key={service.id}>
                                 <div className="service-item rounded-20">
-                                    <a href="service-details.html" className="d-block w-100">
+                                    <Link to="service-details" className="d-block w-100">
                                         <div className={`icon-box rounded-20 d-flex justify-content-center align-items-center ${service.className}`}>
                                             <img src={service.icon} alt="service-icon" />
                                         </div>
@@ -53,7 +54,7 @@ const Services = () => {
                                             <h4 className="service-title">{service.title}</h4>
                                             <p>{service.description}</p>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </SwiperSlide>
                         ))}
