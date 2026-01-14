@@ -7,6 +7,8 @@ import Counter from '../components/Counter'
 import Team from '../components/Team'
 import Message from '../components/Message'
 import CTA from '../components/CTA'
+import Testimonial from '../components/Testimonial'
+import Projects from '../components/Projects'
 
 const Home = () => {
   return (
@@ -19,6 +21,8 @@ const Home = () => {
       <Team />
       <Message />
       <CTA />
+      <Testimonial />
+      <Projects />
     </div>
   )
 }
