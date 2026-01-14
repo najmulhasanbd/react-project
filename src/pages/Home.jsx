@@ -6,6 +6,7 @@ import Services from '../components/Services'
 import Counter from '../components/Counter'
 import Team from '../components/Team'
 import Message from '../components/Message'
+import CTA from '../components/CTA'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Counter />
       <Team />
       <Message />
+      <CTA />
     </div>
   )
 }

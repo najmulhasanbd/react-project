@@ -10,7 +10,6 @@ const Counter = () => {
                     <div className="row">
                         <div className="col-lg-10">
                             <SectionTitle className="heading-style1 split-text right" title="Connecting the Dots of Digital Innovation Worldwide!" />
-                            {/* <h2 className="heading-style1 split-text right">Connecting the Dots of Digital Innovation Worldwide!</h2> */}
                         </div>
                     </div>
                 </div>
