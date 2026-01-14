@@ -10,6 +10,8 @@ import CTA from '../components/CTA'
 import Testimonial from '../components/Testimonial'
 import Projects from '../components/Projects'
 import TexSlider from '../components/TexSlider'
+import Faq from '../components/Faq'
+import Blog from '../components/Blog'
 
 const Home = () => {
   return (
@@ -25,6 +27,8 @@ const Home = () => {
       <Testimonial />
       <Projects />
       <TexSlider />
+      <Faq />
+      <Blog />
     </div>
   )
 }
