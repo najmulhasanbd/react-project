@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import HomeTwoLayout from "./components/HomeTwoLayout";
 import HomeTwo from "./pages/HomeTwo";
-
+import 'swiper/css';
 
 const App = () => {
   return (
