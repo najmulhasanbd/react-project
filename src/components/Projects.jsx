@@ -8,9 +8,9 @@ const Projects = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6 mx-auto text-center">
-                        <SectionTitle 
-                            title="latest projects" 
-                            subtitle="Tech Solutions for a Connected World" 
+                        <SectionTitle
+                            title="latest projects"
+                            subtitle="Tech Solutions for a Connected World"
                         />
                     </div>
                 </div>
@@ -22,11 +22,11 @@ const Projects = () => {
                             <div key={project.id} className="project-item position-relative mb-4">
                                 <div className="img overflow-hidden rounded-20">
                                     <a href={`/project-details/${project.id}`} className="d-block w-100">
-                                        <img 
-                                            src={project.image} 
-                                            alt={project.title} 
-                                            className="img-fluid w-100 object-fit-cover" 
-                                            style={{ minHeight: '400px' }} 
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="img-fluid w-100 object-fit-cover"
+                                            style={{ minHeight: '400px' }}
                                         />
                                     </a>
                                 </div>
@@ -50,11 +50,11 @@ const Projects = () => {
                             <div key={project.id} className="project-item position-relative mb-4">
                                 <div className="img overflow-hidden rounded-20">
                                     <a href={`/project-details/${project.id}`} className="d-block w-100">
-                                        <img 
-                                            src={project.image} 
-                                            alt={project.title} 
-                                            className="img-fluid w-100 object-fit-cover" 
-                                            style={{ minHeight: '400px' }} 
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="img-fluid w-100 object-fit-cover"
+                                            style={{ minHeight: '400px' }}
                                         />
                                     </a>
                                 </div>
