@@ -5,6 +5,7 @@ import Features from './Features'
 import Services from '../components/Services'
 import Counter from '../components/Counter'
 import Team from '../components/Team'
+import Message from '../components/Message'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Services />
       <Counter />
       <Team />
+      <Message />
     </div>
   )
 }
