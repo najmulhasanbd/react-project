@@ -1,6 +1,6 @@
 import React from 'react'
 import CounterImage from '../assets/img/bg/counter-two-bg.svg'
-import OdometerCounter from "./OdometerCounter "
+import OdometerCounter from "./OdometerCounter"
 import TestimonialImg from "../assets/img/testimonial/testimonial-img-2.png"
 import { testimonials } from '../data/counter'
 import { Swiper, SwiperSlide } from 'swiper/react';

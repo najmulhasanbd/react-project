@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 import aboutImg from '../assets/img/about-us/about-img.png'
 import aboutShape from '../assets/img/about-us/about-shape.svg'
 import groupuser from '../assets/img/icons/group-user.svg'
-import OdometerCounter from "./OdometerCounter "
+import OdometerCounter from "../components/OdometerCounter"
 import SectionTitle from './SectionTitle'
 
 const About = () => {

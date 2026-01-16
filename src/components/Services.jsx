@@ -5,6 +5,8 @@ import { services } from '../data/service'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Link } from 'react-router';
+import OdometerCounter from "../components/OdometerCounter"
+
 
 
 const Services = () => {

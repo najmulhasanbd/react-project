@@ -2,7 +2,7 @@ import React from 'react';
 // ইমেজগুলো উপরে ইমপোর্ট করা হলো
 import headphoneIcon from '../assets/img/icons/icon-headphone.svg';
 import whoWeAreImg from '../assets/img/images/who-we-are.png';
-import OdometerCounter from "./OdometerCounter "
+import OdometerCounter from "../components/OdometerCounter";
 import SectionTitle from './SectionTitle';
 
 

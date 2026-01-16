@@ -3,7 +3,7 @@ import faq1 from '../assets/img/faq/faq-img-1.png';
 import faq2 from "../assets/img/faq/faq-img-2.png";
 import faq3 from '../assets/img/icons/group-person-icon.svg';
 import SectionTitle from './SectionTitle';
-import OdometerCounter from "./OdometerCounter "
+import OdometerCounter from "./OdometerCounter";
 
 const faqData = [
     {

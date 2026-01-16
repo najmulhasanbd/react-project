@@ -1,5 +1,5 @@
 import CounterImage from "../assets/img/images/counter-image.png"
-import OdometerCounter from "./OdometerCounter "
+import OdometerCounter from "../components/OdometerCounter"
 import SectionTitle from './SectionTitle'
 
 const Counter = () => {
