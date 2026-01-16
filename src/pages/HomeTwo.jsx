@@ -10,6 +10,7 @@ import Team2 from '../components/Team2'
 import Pricing from '../components/Pricing'
 import Counter2 from '../components/Counter2'
 import Message2 from '../components/Message2'
+import Blog2 from '../components/Blog2'
 
 const HomeTwo = () => {
   return (
@@ -25,6 +26,7 @@ const HomeTwo = () => {
       <Pricing />
       <Counter2 />
       <Message2 />  
+      <Blog2 />
     </>
   )
 }
