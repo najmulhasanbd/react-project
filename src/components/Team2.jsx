@@ -5,22 +5,22 @@ import { teamMembers } from '../data/team'
 
 const Teams = () => {
     return (
-        <section class="ep-team-section-two pt-120">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="short-info text-center text-lg-start">
+        <section className="ep-team-section-two pt-120">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-4">
+                        <div className="short-info text-center text-lg-start">
                             <SectionTitle title="Transforming Challenges into Best" subtitle="Our Team" />
                             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit platea pharetra, yhe a nostra
                                 mattis
                                 hendrerit proin mollis pretium</p>
                             <Link to="contact"
-                                class="theme-btn mt-40 position-relative d-inline-flex align-items-center">
+                                className="theme-btn mt-40 position-relative d-inline-flex align-items-center">
                                 Contact Us
-                                <span class="arrow">
+                                <span className="arrow">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_4443_62)">
+                                        <g clipPath="url(#clip0_4443_62)">
                                             <path
                                                 d="M13.4317 12.5381C13.4967 12.4215 13.535 12.2898 13.5367 12.1506L13.5733 7.95396C13.5758 7.60896 13.2992 7.32646 12.9483 7.32312C12.6058 7.32312 12.3258 7.59896 12.3233 7.94229L12.2975 10.8665L7.48917 6.05813C7.245 5.81396 6.84917 5.81396 6.605 6.05813C6.36083 6.30229 6.36083 6.69812 6.605 6.94229L11.4158 11.7531L8.59083 11.7831C8.245 11.7873 7.96833 12.0698 7.9725 12.4148C7.97583 12.7581 8.255 13.0331 8.60417 13.0331C8.60417 13.0331 12.6783 12.989 12.685 12.989C12.9967 12.9856 13.2842 12.8023 13.4325 12.539L13.4317 12.5381Z"
                                                 fill="white" />
@@ -33,41 +33,41 @@ const Teams = () => {
                             </Link>
                         </div>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="row">
+                    <div className="col-lg-8">
+                        <div className="row">
                             {
                                 teamMembers.map(member => (
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="team-item-two">
-                                            <div class="img rounded-20 overflow-hidden position-relative">
+                                    <div className="col-lg-6 col-md-6" key={member.id}>
+                                        <div className="team-item-two">
+                                            <div className="img rounded-20 overflow-hidden position-relative">
                                                 <img src={member.image} alt="team-2-img"
-                                                    class="img-fluid w-100" />
+                                                    className="img-fluid w-100" />
                                                 <div
-                                                    class="overlay position-absolute bottom-0 start-0 w-100 h-100 d-flex justify-content-center align-items-end text-center">
-                                                    <div class="info">
-                                                        <h4 class="name">{member.name}</h4>
-                                                        <p class="designation">{member.designation}</p>
-                                                        <div class="social-icon-box">
-                                                            <ul class="list-unstyled">
+                                                    className="overlay position-absolute bottom-0 start-0 w-100 h-100 d-flex justify-content-center align-items-end text-center">
+                                                    <div className="info">
+                                                        <h4 className="name">{member.name}</h4>
+                                                        <p className="designation">{member.designation}</p>
+                                                        <div className="social-icon-box">
+                                                            <ul className="list-unstyled">
                                                                 <li>
                                                                     <Link to={member.socials.facebook}
-                                                                        class="d-inline-flex justify-content-center align-items-center"><i
-                                                                            class="fab fa-facebook-f"></i></Link>
+                                                                        className="d-inline-flex justify-content-center align-items-center"><i
+                                                                            className="fab fa-facebook-f"></i></Link>
                                                                 </li>
                                                                 <li>
                                                                     <Link to={member.socials.twitter}
-                                                                        class="d-inline-flex justify-content-center align-items-center"><i
-                                                                            class="fab fa-twitter"></i></Link>
+                                                                        className="d-inline-flex justify-content-center align-items-center"><i
+                                                                            className="fab fa-twitter"></i></Link>
                                                                 </li>
                                                                 <li>
                                                                     <Link to={member.socials.linkedin}
-                                                                        class="d-inline-flex justify-content-center align-items-center"><i
-                                                                            class="fab fa-linkedin-in"></i></Link>
+                                                                        className="d-inline-flex justify-content-center align-items-center"><i
+                                                                            className="fab fa-linkedin-in"></i></Link>
                                                                 </li>
                                                                 <li>
                                                                     <Link to={member.socials.instagram}
-                                                                        class="d-inline-flex justify-content-center align-items-center"><i
-                                                                            class="fab fa-instagram"></i></Link>
+                                                                        className="d-inline-flex justify-content-center align-items-center"><i
+                                                                            className="fab fa-instagram"></i></Link>
                                                                 </li>
                                                             </ul>
                                                         </div>
