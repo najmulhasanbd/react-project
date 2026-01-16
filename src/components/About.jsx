@@ -3,6 +3,7 @@ import aboutImg from '../assets/img/about-us/about-img.png'
 import aboutShape from '../assets/img/about-us/about-shape.svg'
 import groupuser from '../assets/img/icons/group-user.svg'
 import OdometerCounter from "./OdometerCounter "
+import SectionTitle from './SectionTitle'
 
 const About = () => {
     return (
@@ -31,11 +32,7 @@ const About = () => {
                         </div>
                         <div className="col-xl-6 col-lg-9 mx-auto">
                             <div className="about-text">
-                                <div className="section-title-block mb-20">
-                                    <h6 className="section-sub-title position-relative d-inline-block text-uppercase">about us
-                                    </h6>
-                                    <h2 className="section-title split-text right">Unlocking the Power of Technology</h2>
-                                </div>
+                                <SectionTitle title="Unlocking the Power of Technology" subtitle="About Us" />
                                 <p>The IT industry offers diverse career opportunities, from network administration to
                                     software
                                     development</p>
