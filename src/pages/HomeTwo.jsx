@@ -1,8 +1,13 @@
 import React from 'react'
+import BannerTwo from '../components/BannerTwo'
+import About from '../components/About'
 
 const HomeTwo = () => {
   return (
-    <div>HomeTwo</div>
+    <>
+      <BannerTwo />
+      <About />
+    </>
   )
 }
 
