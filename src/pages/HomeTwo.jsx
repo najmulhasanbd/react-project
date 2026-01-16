@@ -25,7 +25,7 @@ const HomeTwo = () => {
       <Team2 />
       <Pricing />
       <Counter2 />
-      <Message2 />  
+      <Message2 />
       <Blog2 />
     </>
   )

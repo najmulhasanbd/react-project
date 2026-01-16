@@ -42,8 +42,8 @@ const Project2 = () => {
                     className="project-slider"
                 >
                     {projects.map((project) => (
-                        <SwiperSlide key={project.id}>
-                            <div className="project-item-two">
+                        <SwiperSlide>
+                            <div className="project-item-two"  key={project.id}>
                                 <div className="img overflow-hidden rounded-20 position-relative">
                                     <img
                                         src={project.image}
