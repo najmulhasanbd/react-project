@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
 import Features from './Features'
@@ -12,23 +12,41 @@ import Projects from '../components/Projects'
 import TexSlider from '../components/TexSlider'
 import Faq from '../components/Faq'
 import Blog from '../components/Blog'
+import HomeSkeleton from '../components/HomeSkeleton'
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div>
       <Header />
-      <Banner />
-      <Features />
-      <Services />
-      <Counter />
-      <Team />
-      <Message />
-      <CTA />
-      <Testimonial />
-      <Projects />
-      <TexSlider />
-      <Faq />
-      <Blog />
+
+      {isLoading ? (
+        <HomeSkeleton />
+      ) : (
+        <main>
+          <Banner />
+          <Features />
+          <Services />
+          <Counter />
+          <Team />
+          <Message />
+          <CTA />
+          <Testimonial />
+          <Projects />
+          <TexSlider />
+          <Faq />
+          <Blog />
+        </main>
+      )}
     </div>
   )
 }

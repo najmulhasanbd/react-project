@@ -14,6 +14,9 @@ import BlogPage from "./pages/BlogPage";
 import BlogDetails from "./pages/BlogDetails";
 import ProjectPage from "./pages/ProjectPage";
 import ProjectDetails from "./pages/ProjectDetails";
+import Error from "./pages/Error";
+import ScrollToTop from "./components/ScrollTop";
+import Animations from "./components/Animations";
 
 const App = () => {
 
@@ -41,6 +44,8 @@ const App = () => {
   return (
     <>
       <Router>
+        <ScrollToTop />
+        <Animations />
         <BodyClassHandler />
         <Routes>
           <Route path="/" element={<HomeOneLayout />}>
@@ -53,6 +58,7 @@ const App = () => {
             <Route path="blog" element={<BlogPage />} />
             <Route path="blog-details" element={<BlogDetails />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="*" element={<Error />} />
           </Route>
           <Route path="/home-two" element={<HomeTwoLayout />}>
             <Route index element={<HomeTwo />} />

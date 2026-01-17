@@ -17,10 +17,10 @@ const BannerTwo = () => {
                     <div className="row banner-row">
                         <div className="col-lg-5 align-self-center">
                             <div className="banner-text">
-                                <h1 className="banner-title split-text right">Make a <span className="d-lg-block">big
+                                <h1 className="banner-title title-anim">Make a <span className="d-lg-block">big
                                     impact</span> with IT
                                 </h1>
-                                <p>lorem ipsum dolor sit amet consectetur. Facilisi cursus vulputate vestibulum etiam
+                                <p l>lorem ipsum dolor sit amet consectetur. Facilisi cursus vulputate vestibulum etiam
                                     rhoncus </p>
                                 {/* ভিডিও প্লে বাটন অংশ */}
                                 <div className="rotate-img custom-wrapper-hover custom-inner-hover d-flex justify-content-center align-items-center text-center">

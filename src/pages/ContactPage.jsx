@@ -57,7 +57,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="contact-form position-relative section-bg">
-            <h2 className="title text-center">Get In Touch</h2>
+            <h2 className="title text-center title-anim">Get In Touch</h2>
             <form action="assets/mail.php" method="POST" id="contact-form">
               <div className="row g-4">
                 <div className="col-lg-6">

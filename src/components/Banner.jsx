@@ -17,7 +17,7 @@ const Banner = () => {
                         <div className="banner-text position-relative z-2">
                             <img src={bannerShape1} alt="banner-shape"
                                 className="position-absolute banner-title-shape" />
-                            <h1 className="banner-title heading-style1 split-text right">Technology That Powers the Future</h1>
+                            <h1 className="banner-title heading-style1 title-anim">Technology That Powers the Future</h1>
                             <p>lorem ipsum dolor sit amet consectetur. Facilisi cursus vulputate vestibulum etiam rhoncus </p>
                             <div className="banner-buttons">
                                 <Link to="about"  className="theme-btn position-relative d-inline-flex align-items-center">
