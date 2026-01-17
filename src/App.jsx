@@ -10,6 +10,8 @@ import { useEffect } from "react";
 import ServicesPage from "./pages/ServicesPage";
 import ServiceDetails from "./pages/ServiceDetails";
 import ContactPage from "./pages/ContactPage";
+import BlogPage from "./pages/BlogPage";
+import BlogDetails from "./pages/BlogDetails";
 
 const App = () => {
 
@@ -44,13 +46,16 @@ const App = () => {
             <Route path="about" element={<AboutPage />} />
             <Route path="services" element={<ServicesPage />} />
             <Route path="service-details" element={<ServiceDetails />} />
+            <Route path="blog" element={<BlogPage />} />
+            <Route path="blog-details" element={<BlogDetails />} />
             <Route path="contact" element={<ContactPage />} />
           </Route>
           <Route path="/home-two" element={<HomeTwoLayout />}>
             <Route index element={<HomeTwo />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="services" element={<ServicesPage />} />
-            <Route path="services-detail" element={<ServiceDetails />} />
+            <Route path="blog" element={<BlogPage />} />
+            <Route path="blog-details" element={<BlogDetails />} />
             <Route path="contact" element={<ContactPage />} />
           </Route>
         </Routes>
