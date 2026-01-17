@@ -12,6 +12,7 @@ import ServiceDetails from "./pages/ServiceDetails";
 import ContactPage from "./pages/ContactPage";
 import BlogPage from "./pages/BlogPage";
 import BlogDetails from "./pages/BlogDetails";
+import ProjectPage from "./pages/ProjectPage";
 
 const App = () => {
 
@@ -46,6 +47,7 @@ const App = () => {
             <Route path="about" element={<AboutPage />} />
             <Route path="services" element={<ServicesPage />} />
             <Route path="service-details" element={<ServiceDetails />} />
+            <Route path="projects" element={<ProjectPage />} />
             <Route path="blog" element={<BlogPage />} />
             <Route path="blog-details" element={<BlogDetails />} />
             <Route path="contact" element={<ContactPage />} />
@@ -54,6 +56,7 @@ const App = () => {
             <Route index element={<HomeTwo />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="services" element={<ServicesPage />} />
+            <Route path="projects" element={<ProjectPage />} />
             <Route path="blog" element={<BlogPage />} />
             <Route path="blog-details" element={<BlogDetails />} />
             <Route path="contact" element={<ContactPage />} />
