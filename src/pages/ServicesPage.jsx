@@ -16,7 +16,7 @@ const ServicesPage = () => {
                     <div className="row">
                         {
                             servicesData.map((service => (
-                                <div className="col-lg-4 col-md-6">
+                                <div className="col-lg-4 col-md-6" key={service.id}>
                                     <div className="service-item rounded-20">
                                         <a href="service-details.html" className="d-block w-100">
                                             <div className="icon-box rounded-20 icon-box-tertiary d-flex justify-content-center align-items-center">
@@ -155,45 +155,45 @@ const ServicesPage = () => {
                 </div>
             </section>
 
-            <section class="ep-messages-section ep-messages-section-two style2 pt-120 position-relative">
-                <div class="container">
-                    <div class="message-main rounded-20">
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="section-title-block mb-40 text-center text-md-start">
-                                    <h6 class="section-sub-title position-relative d-inline-block text-uppercase">Talk to us</h6>
-                                    <h2 class="section-title split-text right">Empowering Progress Through Technology</h2>
+            <section className="ep-messages-section ep-messages-section-two style2 pt-120 position-relative">
+                <div className="container">
+                    <div className="message-main rounded-20">
+                        <div className="row">
+                            <div className="col-lg-7">
+                                <div className="section-title-block mb-40 text-center text-md-start">
+                                    <h6 className="section-sub-title position-relative d-inline-block text-uppercase">Talk to us</h6>
+                                    <h2 className="section-title split-text right">Empowering Progress Through Technology</h2>
                                 </div>
                             </div>
                         </div>
-                        <div class="row g-4">
-                            <div class="col-xl-7 order-2 order-xl-1">
-                                <div class="message-text">
-                                    <form action="#" class="message-form">
-                                        <div class="row g-3">
-                                            <div class="col-lg-6">
-                                                <div class="input-group">
-                                                    <label class="form-label">Your Name</label>
-                                                    <input type="text" class="form-control form-field shadow-none" placeholder="Adnan Walker" />
+                        <div className="row g-4">
+                            <div className="col-xl-7 order-2 order-xl-1">
+                                <div className="message-text">
+                                    <form action="#" className="message-form">
+                                        <div className="row g-3">
+                                            <div className="col-lg-6">
+                                                <div className="input-group">
+                                                    <label className="form-label">Your Name</label>
+                                                    <input type="text" className="form-control form-field shadow-none" placeholder="Adnan Walker" />
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <div class="input-group">
-                                                    <label class="form-label">Your Email</label>
-                                                    <input type="text" class="form-control form-field shadow-none"
+                                            <div className="col-lg-6">
+                                                <div className="input-group">
+                                                    <label className="form-label">Your Email</label>
+                                                    <input type="text" className="form-control form-field shadow-none"
                                                         placeholder="info.example@gmail.com" />
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <div class="input-group">
-                                                    <label class="form-label">Your Number</label>
-                                                    <input type="text" class="form-control form-field shadow-none" placeholder="+088123456789" />
+                                            <div className="col-lg-6">
+                                                <div className="input-group">
+                                                    <label className="form-label">Your Number</label>
+                                                    <input type="text" className="form-control form-field shadow-none" placeholder="+088123456789" />
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <div class="input-group">
-                                                    <label class="form-label">Your Area</label>
-                                                    <select class="form-select form-field shadow-none" aria-label="Default select example">
+                                            <div className="col-lg-6">
+                                                <div className="input-group">
+                                                    <label className="form-label">Your Area</label>
+                                                    <select className="form-select form-field shadow-none" aria-label="Default select example">
                                                         <option>New York City</option>
                                                         <option>Los Angeles</option>
                                                         <option>Chicago</option>
@@ -201,45 +201,45 @@ const ServicesPage = () => {
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12">
-                                                <div class="input-group">
-                                                    <label class="form-label">Your Area</label>
-                                                    <textarea class="form-field textarea-control" placeholder="Message here.."></textarea>
+                                            <div className="col-lg-12">
+                                                <div className="input-group">
+                                                    <label className="form-label">Your Area</label>
+                                                    <textarea className="form-field textarea-control" placeholder="Message here.."></textarea>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12">
+                                            <div className="col-lg-12">
                                                 <button type="submit"
-                                                    class="theme-btn w-100 text-center theme-btn-tertiary position-relative">Send Now</button>
+                                                    className="theme-btn w-100 text-center theme-btn-tertiary position-relative">Send Now</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-xl-5 order-1 order-xl-2">
-                                <div class="message-contact-info rounded-20">
-                                    <h4 class="title text-white mb-40">Contact</h4>
-                                    <ul class="list-unstyled contact-info">
-                                        <li class="d-flex align-items-center">
-                                            <div class="icon flex-shrink-0"><i class="fa-solid fa-paper-plane"></i></div>
-                                            <div class="text">
-                                                <p class="cn-title">Address </p>
-                                                <h5 class="cn-info">4517 Washington Ave. Manchester</h5>
+                            <div className="col-xl-5 order-1 order-xl-2">
+                                <div className="message-contact-info rounded-20">
+                                    <h4 className="title text-white mb-40">Contact</h4>
+                                    <ul className="list-unstyled contact-info">
+                                        <li className="d-flex align-items-center">
+                                            <div className="icon flex-shrink-0"><i className="fa-solid fa-paper-plane"></i></div>
+                                            <div className="text">
+                                                <p className="cn-title">Address </p>
+                                                <h5 className="cn-info">4517 Washington Ave. Manchester</h5>
                                             </div>
                                         </li>
-                                        <li class="d-flex align-items-center">
-                                            <div class="icon flex-shrink-0"><i class="fa-solid fa-envelope"></i></div>
-                                            <div class="text">
-                                                <p class="cn-title">Email</p>
-                                                <h5 class="cn-info">
+                                        <li className="d-flex align-items-center">
+                                            <div className="icon flex-shrink-0"><i className="fa-solid fa-envelope"></i></div>
+                                            <div className="text">
+                                                <p className="cn-title">Email</p>
+                                                <h5 className="cn-info">
                                                     <a href="mailto:info@example.com">info@example.com</a>
                                                 </h5>
                                             </div>
                                         </li>
-                                        <li class="d-flex align-items-center">
-                                            <div class="icon flex-shrink-0"><i class="fa-solid fa-phone"></i></div>
-                                            <div class="text">
-                                                <p class="cn-title">Phone</p>
-                                                <h5 class="cn-info">
+                                        <li className="d-flex align-items-center">
+                                            <div className="icon flex-shrink-0"><i className="fa-solid fa-phone"></i></div>
+                                            <div className="text">
+                                                <p className="cn-title">Phone</p>
+                                                <h5 className="cn-info">
                                                     <a href="tel:(239)555-0108">(239) 555-0108</a>
                                                 </h5>
                                             </div>

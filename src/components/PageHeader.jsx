@@ -1,5 +1,6 @@
 import React from 'react';
 import pageHeader from '../assets/img/images/page-header-img.svg';
+import { Link } from 'react-router';
 
 const PageHeader = ({ title, subtitle }) => {
   return (
@@ -16,7 +17,7 @@ const PageHeader = ({ title, subtitle }) => {
               <h1 className="page-title">{title || "Page Title"}</h1>
               <ul className="list-unstyled d-flex flex-wrap align-items-center justify-content-end mt-30">
                 <li>
-                  <a href="index.html">Home</a>
+                  <Link to="/">Home</Link>
                   <i className="fa-solid fa-chevron-right"></i>
                 </li>
                 <li>{subtitle || "About Us"}</li>

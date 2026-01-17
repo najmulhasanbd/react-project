@@ -8,6 +8,7 @@ import HomeTwo from "./pages/HomeTwo";
 import 'swiper/css';
 import { useEffect } from "react";
 import ServicesPage from "./pages/ServicesPage";
+import ServiceDetails from "./pages/ServiceDetails";
 
 const App = () => {
 
@@ -41,11 +42,13 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="services" element={<ServicesPage />} />
+            <Route path="service-details" element={<ServiceDetails />} />
           </Route>
           <Route path="/home-two" element={<HomeTwoLayout />}>
             <Route index element={<HomeTwo />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="services" element={<ServicesPage />} />
+            <Route path="services-detail" element={<ServiceDetails />} />
           </Route>
         </Routes>
       </Router>
